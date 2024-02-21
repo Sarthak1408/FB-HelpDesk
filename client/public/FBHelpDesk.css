@@ -1,0 +1,377 @@
+/*FB HelpDesk StyleSheet by Sarthak Mathur*/
+
+/*---Common CSS---*/
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #1e4d91;
+    --red: #e35043;
+    --sidebar: #004e96;
+    --cd-bg: #eff2f7;
+    --cd-main: #ffffff;
+    --chat-bg: #f6f6f6;
+    --con-active: #edeef0;
+    --text-highlight: #005091;
+    --box-highlight: #0067bd;
+    --grey: #c4c4c4;
+}
+
+.bg-blue {
+    background-color: var(--bg-color);
+}
+
+.bg-red {
+    background-color: var(--red);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+.rounded-10 {
+    border-radius: 10px;
+}
+
+.rounded-20 {
+    border-radius: 20px;
+}
+
+.rounded-50 {
+    border-radius: 50px;
+}
+
+.grey-border {
+    box-shadow: 0 0 3px grey;
+}
+
+.header-pad {
+    padding: 24px 16px;
+}
+
+.button-sm {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 16px;
+}
+
+.button-lg {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 16px 24px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    padding: 56px;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 450px;
+}
+
+@media screen and (max-width: 650px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        padding: 32px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .card {
+        padding: 32px 16px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-field label {
+    font-weight: bold;
+}
+
+.input-field input {
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 10px 16px;
+}
+
+.check-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.center-grid {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.head-lg {
+    font-size: 56px;
+}
+
+.head-md {
+    font-size: 32px;
+}
+
+.head-sm {
+    font-size: 24px;
+}
+
+.text-lg {
+    font-size: 18px;
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-highlight);
+}
+
+.container {
+    padding: 0 16px;
+}
+
+/*---Common CSS End---*/
+
+/*---Dashboard---*/
+
+.dashboard {
+    display: flex;
+}
+
+.dashboard aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.dashboard aside ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard aside ul li {
+    padding: 24px 16px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.dashboard aside ul li:hover {
+    background-color: #fff;
+}
+
+.dashboard aside ul li img {
+    width: 64px;
+}
+
+.dashboard aside ul li i {
+    font-size: 32px;
+    color: white;
+    transition: color 0.2s ease;
+}
+
+.dashboard aside ul li:hover i {
+    color: var(--bg-color);
+}
+
+.dashboard aside .profile {
+    padding: 24px 16px;
+    position: relative;
+}
+
+.dashboard aside .profile img {
+    width: 64px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.dashboard aside .profile .status {
+    position: absolute;
+    right: 20%;
+    bottom: 25%;
+    width: 15px;
+    aspect-ratio: 1/1;
+    background-color: greenyellow;
+    border-radius: 100%;
+}
+/*---Dashboard End---*/
+
+/*---Conversation---*/
+
+.conversation {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.conversation .chat-list, .conversation .user-profile {
+    flex-basis: 350px;
+}
+
+.conversation .chat {
+    flex: auto;
+}
+
+.conversation .chat-list {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--grey);
+}
+
+.conversation .chat-list header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border: 1px solid var(--grey);
+}
+
+.conversation .chat-list header .left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.conversation .chat-list .list-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation .chat-list .list-flex .conv-item {
+    padding: 24px 16px;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.conversation .chat-list .list-flex .conv-item.active {
+    background-color: var(--con-active);
+}
+
+.conversation .chat-list .list-flex .conv-item .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conversation .chat-list .list-flex .conv-item .top .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.conversation .chat-list .list-flex .conv-item .top .left .text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.conversation .chat-list .list-flex .conv-item .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.conversation .chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation .chat header {
+    border: 1px solid var(--grey);
+}
+
+.conversation .chat .chat-box {
+    width: 100%;
+    height: 100%;
+    background-color: var(--chat-bg);
+    position: relative;
+    padding-bottom: 150px;
+}
+
+.conversation .chat .chat-box .message-input {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.conversation .chat .chat-box .message-input input {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+
+.conversation .chat .chat-box .message-input input:focus {
+    outline: 2px solid var(--box-highlight);
+}
+
+/*---Conversation End---*/
