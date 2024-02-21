@@ -194,6 +194,7 @@ a {
 
 .dashboard {
     display: flex;
+    height: 100vh;
 }
 
 .dashboard aside {
@@ -261,6 +262,32 @@ a {
     background-color: greenyellow;
     border-radius: 100%;
 }
+
+@media screen and (max-width: 1256px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .dashboard aside {
+        flex-direction: row;
+        height: max-content;
+        width: 100%;
+    }
+
+    .dashboard aside ul {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .dashboard aside ul li {
+        padding: 16px 24px;
+        height: 100%;
+    }
+
+    .dashboard aside .profile {
+        padding: 16px 24px;
+    }
+}
 /*---Dashboard End---*/
 
 /*---Conversation---*/
@@ -268,7 +295,8 @@ a {
 .conversation {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
+    position: relative;
 }
 
 .conversation .chat-list, .conversation .user-profile {
@@ -348,6 +376,13 @@ a {
 
 .conversation .chat header {
     border: 1px solid var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conversation .chat header button.view {
+    display: none;
 }
 
 .conversation .chat .chat-box {
@@ -425,6 +460,7 @@ a {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .conversation .user-profile .user-details {
@@ -451,5 +487,39 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.conversation .user-profile .close-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1191px) {
+    .conversation .user-profile {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        transition: all 0.4s ease;
+        transform: translateX(100%);
+    }
+
+    .conversation .user-profile.active {
+        transform: translateX(0);
+    }
+
+    .conversation .user-profile .close-icon {
+        display: block;
+    }
+
+    .conversation .chat header button.view {
+        display: block;
+    }
 }
 /*---Conversation End---*/

@@ -1,6 +1,20 @@
 import {Conversation} from "../components/Conversation";
+import {useRef} from "react";
 
 export const Dashboard = () => {
+
+    //refs
+    const profileBar = useRef(null);
+
+    //Toggle Profile Sidebar
+    function toggleProfile() {
+        if (profileBar.current.classList.contains("active")) {
+            profileBar.current.classList.remove("active");
+        } else {
+            profileBar.current.classList.add("active");
+        }
+    }
+
     return (
         <>
             <div className="dashboard">
@@ -47,6 +61,7 @@ export const Dashboard = () => {
                     <div className="chat">
                         <header className="header-pad">
                             <span className="name head-sm font-bold">Sarthak Mathur</span>
+                            <button onClick={toggleProfile} className="button-sm bg-blue text-white view" type="button">View Profile</button>
                         </header>
                         <div className="chat-box container">
                             <div className="message-box">
@@ -57,7 +72,8 @@ export const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="user-profile">
+                    <div className="user-profile" ref={profileBar}>
+                        <span className="close-icon" onClick={toggleProfile}>X</span>
                         <div className="profile">
                             <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Profile" className="profile-img"/>
                             <div className="name-status">
