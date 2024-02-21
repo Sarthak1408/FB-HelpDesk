@@ -5,6 +5,7 @@ export const Dashboard = () => {
 
     //refs
     const profileBar = useRef(null);
+    const chatList = useRef(null);
 
     //Toggle Profile Sidebar
     function toggleProfile() {
@@ -12,6 +13,15 @@ export const Dashboard = () => {
             profileBar.current.classList.remove("active");
         } else {
             profileBar.current.classList.add("active");
+        }
+    }
+
+    //Toggle Profile Sidebar
+    function toggleConvList() {
+        if (chatList.current.classList.contains("active")) {
+            chatList.current.classList.remove("active");
+        } else {
+            chatList.current.classList.add("active");
         }
     }
 
@@ -42,10 +52,10 @@ export const Dashboard = () => {
                 {/*  Sidebar End  */}
                 {/*  Conversations  */}
                 <div className="conversation">
-                    <div className="chat-list">
+                    <div className="chat-list" ref={chatList}>
                         <header className="header-pad">
                             <div className="left">
-                                <i className="fa-solid fa-bars text-grey"/>
+                                <span className="close-icon" onClick={toggleConvList}>X</span>
                                 <span className="font-bold head-sm">Conversations</span>
                             </div>
                             <div className="right">
@@ -60,8 +70,9 @@ export const Dashboard = () => {
                     </div>
                     <div className="chat">
                         <header className="header-pad">
+                            <i className="fa-solid fa-bars" onClick={toggleConvList}/>
                             <span className="name head-sm font-bold">Sarthak Mathur</span>
-                            <button onClick={toggleProfile} className="button-sm bg-blue text-white view" type="button">View Profile</button>
+                            <button onClick={toggleProfile} className="button-sm bg-blue text-white view" type="button">View </button>
                         </header>
                         <div className="chat-box container">
                             <div className="message-box">
