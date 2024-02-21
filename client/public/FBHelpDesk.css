@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+#root, html, body {
+    overflow-x: hidden;
+}
+
 :root {
     --bg-color: #1e4d91;
     --red: #e35043;
@@ -405,6 +409,10 @@ a {
     justify-content: space-between;
 }
 
+.conversation .chat header i.fa-bars {
+    display: none;
+}
+
 .conversation .chat header button.view {
     display: none;
 }
@@ -435,6 +443,51 @@ a {
 
 .conversation .chat .chat-box .message-input input:focus {
     outline: 2px solid var(--box-highlight);
+}
+
+.conversation .chat .message-box {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    padding: 16px;
+    width: 100%;
+}
+
+.conversation .chat .message-box .profile-img img {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.conversation .chat .message-box .message-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.conversation .chat .message-box .message-list .message-item {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 0 10px 10px 10px;
+    font-size: 18px;
+}
+
+.conversation .chat .message-box.user {
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+
+.conversation .chat .message-box.user .message-list {
+    align-items: flex-end;
+}
+
+.conversation .chat .message-box.user .message-list .message-item {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 10px 0 10px 10px;
+    font-size: 18px;
 }
 
 .conversation .user-profile {
@@ -545,6 +598,7 @@ a {
     .conversation .chat header i.fa-bars {
         font-size: 18px;
         cursor: pointer;
+        display: block;
     }
 
     .conversation .chat header button.view {
@@ -573,6 +627,13 @@ a {
     .conversation .chat-list header .left span.close-icon {
         display: block;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .conversation .chat .message-box {
+        gap: 16px;
+        padding: 16px 0;
     }
 }
 /*---Conversation End---*/

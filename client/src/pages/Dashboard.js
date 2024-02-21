@@ -76,7 +76,22 @@ export const Dashboard = () => {
                         </header>
                         <div className="chat-box container">
                             <div className="message-box">
-
+                                <div className="profile-img">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Chat Profile"/>
+                                </div>
+                                <div className="message-list">
+                                    <span className="message-item">Hi</span>
+                                    <span className="message-item">How are you?</span>
+                                </div>
+                            </div>
+                            <div className="message-box user">
+                                <div className="profile-img">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Chat Profile"/>
+                                </div>
+                                <div className="message-list">
+                                    <span className="message-item">I am good!</span>
+                                    <span className="message-item">How are you?</span>
+                                </div>
                             </div>
                             <div className="message-input">
                                 <input type="text" className="grey-border rounded-10" name="message" id="message" placeholder="Message User"/>
