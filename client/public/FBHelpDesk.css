@@ -423,6 +423,9 @@ a {
     background-color: var(--chat-bg);
     position: relative;
     padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .conversation .chat .chat-box .message-input {
@@ -451,6 +454,18 @@ a {
     gap: 32px;
     padding: 16px;
     width: 100%;
+    position: relative;
+}
+
+.conversation .chat .message-box .msg-time {
+    position: absolute;
+    bottom: -10%;
+    left: 10%;
+}
+
+.conversation .chat .message-box.user .msg-time{
+    right: 10%;
+    left: initial;
 }
 
 .conversation .chat .message-box .profile-img img {

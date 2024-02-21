@@ -76,6 +76,7 @@ export const Dashboard = () => {
                         </header>
                         <div className="chat-box container">
                             <div className="message-box">
+                                <span className="msg-time text-sm text-grey"><span className="font-bold">Sarthak Mathur</span> - Feb 21, 3:10 PM</span>
                                 <div className="profile-img">
                                     <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Chat Profile"/>
                                 </div>
@@ -85,6 +86,7 @@ export const Dashboard = () => {
                                 </div>
                             </div>
                             <div className="message-box user">
+                                <span className="msg-time text-sm text-grey"><span className="font-bold">Sarthak Mathur</span> - Feb 21, 3:10 PM</span>
                                 <div className="profile-img">
                                     <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Chat Profile"/>
                                 </div>
