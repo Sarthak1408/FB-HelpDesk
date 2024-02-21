@@ -381,6 +381,7 @@ a {
 .conversation .user-profile {
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--grey);
 }
 
 .conversation .user-profile .profile {
@@ -392,6 +393,8 @@ a {
     align-items: center;
     justify-content: center;
     gap: 16px;
+    padding: 32px;
+    border: 1px solid var(--grey);
 }
 
 .conversation .user-profile .profile img.profile-img {
@@ -422,5 +425,31 @@ a {
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+.conversation .user-profile .user-details {
+    height: 100%;
+    background-color: var(--cd-bg);
+    padding: 16px;
+}
+
+.conversation .user-profile .user-details .detail-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+.conversation .user-profile .user-details .detail-card .details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.conversation .user-profile .user-details .detail-card .details .detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 /*---Conversation End---*/

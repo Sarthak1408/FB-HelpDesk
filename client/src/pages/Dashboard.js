@@ -72,6 +72,26 @@ export const Dashboard = () => {
                                 <button className="button-sm bg-white grey-border"><i className="fa-solid fa-user"/> Profile</button>
                             </div>
                         </div>
+                        <div className="user-details">
+                            <div className="detail-card rounded-10 grey-border">
+                                <span className="text-lg font-bold">Customer Details</span>
+                                <div className="details">
+                                    <div className="detail-item">
+                                        <span className="name text-grey">Email</span>
+                                        <span className="value font-bold">sarthak@abc.com</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="name text-grey">First Name</span>
+                                        <span className="value font-bold">Sarthak</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="name text-grey">Last Name</span>
+                                        <span className="value font-bold">Mathur</span>
+                                    </div>
+                                </div>
+                                <a href="#" className="font-bold">View more details</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {/*  Conversations End  */}
