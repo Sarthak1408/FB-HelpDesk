@@ -57,7 +57,22 @@ export const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="user-profile"></div>
+                    <div className="user-profile">
+                        <div className="profile">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Profile" className="profile-img"/>
+                            <div className="name-status">
+                                <span className="name font-bold">Sarthak Mathur</span>
+                                <div className="status">
+                                    <span className="icon"/>
+                                    <span className="status-text">Online</span>
+                                </div>
+                            </div>
+                            <div className="options">
+                                <button className="button-sm bg-white grey-border"><i className="fa-solid fa-phone"/> Call</button>
+                                <button className="button-sm bg-white grey-border"><i className="fa-solid fa-user"/> Profile</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {/*  Conversations End  */}
             </div>

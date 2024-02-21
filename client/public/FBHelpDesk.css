@@ -25,6 +25,10 @@
     background-color: var(--bg-color);
 }
 
+.bg-white {
+    background-color: #ffffff;
+}
+
 .bg-red {
     background-color: var(--red);
 }
@@ -374,4 +378,49 @@ a {
     outline: 2px solid var(--box-highlight);
 }
 
+.conversation .user-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation .user-profile .profile {
+    height: 300px;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.conversation .user-profile .profile img.profile-img {
+    height: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.conversation .user-profile .profile .name-status {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.conversation .user-profile .profile .name-status .status span.icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    aspect-ratio: 1/1;
+    background-color: greenyellow;
+    margin: 0 5px;
+    border-radius: 100%;
+}
+
+.conversation .user-profile .profile .options {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 /*---Conversation End---*/
