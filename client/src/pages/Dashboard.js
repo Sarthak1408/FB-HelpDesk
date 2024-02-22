@@ -57,8 +57,8 @@ export const Dashboard = () => {
                         <li title="Users">
                             <i className="fa-solid fa-users"/>
                         </li>
-                        <li title="Statistics">
-                            <i className="fa-solid fa-chart-line"/>
+                        <li title="Delete Integration" onClick={()=>{nav("/disconnect")}}>
+                            <i className="fa-solid fa-trash"/>
                         </li>
                         <li title="Logout" onClick={logoutHandler}>
                             <i className="fa-solid fa-right-from-bracket"/>

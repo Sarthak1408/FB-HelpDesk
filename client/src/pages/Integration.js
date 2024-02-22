@@ -12,10 +12,10 @@ export const Integration = () => {
     //Refs
     const err = useRef(null);
 
-    //Check Integration
+    //Check Login
     useEffect(() => {
-        const prof = getCookie("prof");
-        if (prof) nav("/dashboard");
+        const em = getCookie("em");
+        if (!em) nav("/");
     }, [])
 
     return (
