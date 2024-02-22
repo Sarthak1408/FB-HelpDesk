@@ -1,7 +1,12 @@
 import {Conversation} from "../components/Conversation";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
+import {delCookie, getCookie} from "../utils/CookieMaster";
+import {useNavigate} from "react-router-dom";
 
 export const Dashboard = () => {
+
+    //Navigator
+    const nav = useNavigate();
 
     //refs
     const profileBar = useRef(null);
@@ -25,6 +30,18 @@ export const Dashboard = () => {
         }
     }
 
+    //Logout
+    function logoutHandler() {
+        delCookie("em");
+        nav("/");
+    }
+
+    //Check login
+    useEffect(()=>{
+        const em = getCookie("em");
+        if(!em) nav("/");
+    },[])
+
     return (
         <>
             <div className="dashboard">
@@ -42,6 +59,9 @@ export const Dashboard = () => {
                         </li>
                         <li title="Statistics">
                             <i className="fa-solid fa-chart-line"/>
+                        </li>
+                        <li title="Logout" onClick={logoutHandler}>
+                            <i className="fa-solid fa-right-from-bracket"/>
                         </li>
                     </ul>
                     <div className="profile">

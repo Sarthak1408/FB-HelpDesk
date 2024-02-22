@@ -192,6 +192,23 @@ a {
     padding: 0 16px;
 }
 
+.reg-err, .log-err {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    display: none;
+}
+
+.reg-err.active, .log-err.active {
+    display: block;
+}
+
 /*---Common CSS End---*/
 
 /*---Dashboard---*/
@@ -645,7 +662,7 @@ a {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
     .conversation .chat .message-box {
         gap: 16px;
         padding: 16px 0;

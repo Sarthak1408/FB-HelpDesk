@@ -1,7 +1,15 @@
-import {Link} from "react-router-dom";
-import {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import {useEffect, useRef, useState} from "react";
+import axios from "axios";
+import {getCookie} from "../utils/CookieMaster";
 
 export const Register = () => {
+
+    //Navigator
+    const nav = useNavigate();
+
+    //refs
+    const err = useRef(null);
 
     //States
     const [name, setName] = useState("");
@@ -15,16 +23,42 @@ export const Register = () => {
         //Prevent Page From Refreshing
         e.preventDefault();
 
-        //Create Form Data Object for Post Request
-        const formData = new FormData();
-        formData.append("name", name);
-        formData.append("email", email);
-        formData.append("password", password);
-
         //Post Request
-
-
+        axios.post("http://localhost:5000/sign-up", {
+            name: name,
+            email: email,
+            password: password
+        })
+            .then((res) => {
+                if(res.data === "success") {
+                    err.current.classList.add("active");
+                    err.current.innerText = "Sign up successful!";
+                    setTimeout(()=>{
+                        nav("/");
+                    },2000)
+                }
+                else if (res.data === "error") {
+                    err.current.classList.add("active");
+                    err.current.innerText = "Something went wrong!";
+                    setTimeout(()=>{
+                        err.current.classList.remove("active");
+                    },5000)
+                }
+                else if (res.data === "exists") {
+                    err.current.classList.add("active");
+                    err.current.innerText = "Account already exists";
+                    setTimeout(()=>{
+                        err.current.classList.remove("active");
+                    },5000)
+                }
+            });
     }
+
+    //Check login
+    useEffect(()=>{
+        const em = getCookie("em");
+        if(em) nav("/dashboard");
+    },[])
 
     return (
         <>
@@ -58,8 +92,9 @@ export const Register = () => {
                         </div>
                         <button className="button-lg bg-blue text-white" type="submit">Sign Up</button>
                     </form>
-                    <span>Already have an account? <Link to={"/login"}>Login</Link></span>
+                    <span>Already have an account? <Link to={"/"}>Login</Link></span>
                 </div>
+                <p className="reg-err" ref={err}></p>
             </div>
         </>
     )
