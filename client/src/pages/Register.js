@@ -24,7 +24,7 @@ export const Register = () => {
         e.preventDefault();
 
         //Post Request
-        axios.post("http://localhost:5000/sign-up", {
+        axios.post("https://helpdesk-server.onrender.com/sign-up", {
             name: name,
             email: email,
             password: password
@@ -57,7 +57,7 @@ export const Register = () => {
     //Check login
     useEffect(()=>{
         const em = getCookie("em");
-        if(em) nav("/dashboard");
+        if(em) nav("/integration");
     },[])
 
     return (

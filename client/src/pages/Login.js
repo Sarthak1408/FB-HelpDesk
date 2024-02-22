@@ -23,7 +23,7 @@ export const Login = () => {
         e.preventDefault();
 
         //Post Request
-        axios.post("http://localhost:5000/log-in", {
+        axios.post("https://helpdesk-server.onrender.com/log-in", {
             email: email,
             password: password
         })
@@ -37,7 +37,7 @@ export const Login = () => {
                     }
                     err.current.innerText = "Login Successful!";
                     setTimeout(() => {
-                        nav("/dashboard");
+                        nav("/integration");
                     }, 2000);
                 } else if (res.data === "wrong-pass") {
                     err.current.classList.add("active");
@@ -58,7 +58,7 @@ export const Login = () => {
     //Check login
     useEffect(() => {
         const em = getCookie("em");
-        if (em) nav("/dashboard");
+        if (em) nav("/integration");
     }, [])
 
 
